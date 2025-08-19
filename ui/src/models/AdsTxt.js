@@ -1,0 +1,6 @@
+const AdsTxt = `
+Ads.txt SagaSage.com
+google.com, pub-6176227606947398, DIRECT, f08c47fec0942fa0
+`;
+
+export default AdsTxt;

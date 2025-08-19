@@ -1,0 +1,38 @@
+{
+  "name": "ai-co-dm-character-lambda",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./src/index.ts",
+  "scripts": {
+    "local": "npx ts-node ./src/local.ts",
+    "build": "npx tsc && cp package.json build && cp yarn.lock build && cd build && yarn install --production --frozen-lockfile && cd ..",
+    "deploy:local": "npm run build && cd terraform && terraform apply -auto-approve && terraform output -json > terraform_output.json && cd ..",
+    "aws:login": "aws sso login --profile Thrasosoft-Admin",
+    "plan": "npm run build && cd terraform && terraform plan"
+  },
+  "type": "module",
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.456.0",
+    "@aws-sdk/client-sts": "^3.454.0",
+    "@types/pg": "^8.10.9",
+    "@types/uuid": "^9.0.7",
+    "axios": "^1.4.0",
+    "dotenv": "^16.0.3",
+    "eslint": "^8.52.0",
+    "firebase-admin": "^11.11.0",
+    "fs": "^0.0.1-security",
+    "google-auth-library": "^8.8.0",
+    "https": "^1.0.0",
+    "jwt-decode": "^3.1.2",
+    "openai": "^3.2.1",
+    "pg": "^8.11.3",
+    "uuid": "^9.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "^18.15.13",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.0.4"
+  }
+}

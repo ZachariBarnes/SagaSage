@@ -1,0 +1,200 @@
+{
+  "maxWounds":"number",
+  "wealthFormatted": "string",
+  "naturalArmor": "number",
+  "rank": "number", //Ex: 1
+  "rankName": "string", // Ex: "Seasoned" (Options: Novice | Seasoned | Veteran | Legendary)
+  "abilities": [{
+    "hasPowerPointPool": "boolean",
+    "hasMegaPowerOptions": "boolean",
+    "name": "string", // Ex: "Miracles",
+    "powerPointsMax": "number", // Ex: 20,
+    "powerPointsCurrent": "number", // Ex: 20,
+    "arcaneSkill": "string", //Ex: "Faith",
+    "powers": [{
+      "name": "string", //Ex:"Detect/Conceal Arcana",
+      "powerPoints": "2",
+      "range": "string", //Ex:"Smarts",
+      "damage": "string", //Ex: "2d6" | "",
+      "duration": "string", //Ex: "5 (detect)/1 hour (conceal)",
+      "summary": "string", //Ex: "Detects magic for Duration 5 or conceals it for one hour. - ",
+      "description": "string", //Ex: "Detect arcana allows the recipient of the power to see and detect all supernatural persons, objects, or effects in sight for five rounds.\nThis includes invisible foes, enchantments on people or items, weird science devices, and so on. With a raise, the caster knows the general\ntype of enchantment as well — harmful,\nobscurement, magic, miracles, etc.\n\nDetect arcana also allows a character to ignore up to 4 points of penalties when attacking foeshidden by magical darkness, invisibility, or similar abilities (or all penalties with a raise).\n\nConceal arcana prevents detection of arcane energies on one being or item of Normal Scale for one hour (see the Size Table page 179).\n\n**Detect vs. Conceal**: Detecting arcana against someone or something that’s been concealed is an opposed roll of arcane skills (roll each time it’s attempted, but no more than once per turn). If the concealment wins, the character\ncannot see through the ruse with this casting,but may terminate this instance and try again.",
+      "rank": "string", //Ex: "novice",
+      "arcaneSkillName": "string", //Ex: "Faith",
+      "arcaneSkillRoll": "string", //Ex: "d10",
+      "powerModifiers": [
+        "string", //Ex: "ADDITIONAL RECIPIENTS (+1): The power may affect more than one target for 1 additional Power Point each.",
+        "AREA OF EFFECT (+1/+2): The power affects everything in a sphere the size of a Medium Blast Template for +1 points, or a Large Blast Template for +2.",
+        "STRONG (+1): Conceal only. Detection rolls to see through the concealment are made at −2."
+      ],
+      "megaPowerOptions": [
+        "string", //Ex: "EXALTED DETECT ARCANA (+2): Detect arcana is greatly enhanced, giving it expanded analytical effects. With a successful Arcane Skill check on a particular magical effect or supernatural entity or phenomena. See Text",
+        "EXALTED CONCEAL ARCANA (+2): The recipient is −2 (or −4 with a raise) to be seen or found with detect arcana, divination, and other arcane abilities; may not be used in combination with the power’s Strong modifier.",
+        "PRESENCE SENSE (+1): The caster is able to sense the presence and exact location of living beings within range like a radar; detect arcana activated with Presence Sense no longer requires line of sight to locate living beings."
+      ]
+    }]
+  }],
+  "advances": [{
+    "name":  "string", //Ex:  "Edge: Power Points",
+    "number":"number", // Ex:  1,
+    "description": "string", //Ex: "Edge: Power Points"
+    "effect" : "string" //Ex: "Add 5 power points to maximum power points"
+  }, {
+    "name":  "string", //Ex:  "Edge: New Powers",
+    "number":"number", // Ex:  2,
+    "description":  "string", //Ex:  "Edge: New Powers",
+    "effect" : "string" //Ex: "gain 2 new powers usable by your arcane background"
+  }, {
+    "name":  "string", //Ex:  "Raise Attribute: Spirit",
+    "number":"number", // Ex:  3,
+    "description":  "string", //Ex:  "Raise Attribute: Spirit",
+    "effect" : "string" //Ex: "Raise Spirit Attribute by one die type"
+  }],
+  "advancesCount": "number", // Ex: 3,
+  "age": "number",
+  "armor": [{
+    "name": "string", // Ex: "(Unarmored)",
+    "weight": "number", // Ex: 0,
+    "quantity": "number", // Ex:  1,
+    "armor": "number", // Ex: 0,
+    "notes": "string", //Ex: ""
+    "cost": "number", // Ex: 0,
+    "equippedToughness": "string", //Ex:  "4",
+    "equippedStrength": "string", //Ex:  "d4",
+    "heavyArmor": "boolean" //Ex: false
+  }],
+  "armorValue": "number", // Ex: 0,
+  "attributes": [{
+    "name":"string", //Ex: "agility",
+    "value":"string" //Ex: "d4"
+  }, {
+    "name":"string", //Ex: "smarts",
+    "value":"string" //Ex:  "d8"
+  }, {
+    "name":"string", //Ex: "spirit",
+    "value":"string" //Ex:  "d12"
+  }, {
+    "name":"string", //Ex: "strength",
+    "value":"string" //Ex: "d4"
+  }, {
+    "name":"string", //Ex: "vigor",
+    "value":"string" //Ex: "d4"
+  }],
+  "edges": [{
+    "note": "string", //Ex: "Selected",
+    "name": "string", //Ex:   "Arcane Background (Miracles)",
+    "description": "string" //Ex: "Allows access to the Arcane Backgrounds listed in Chapter Five.",
+  }, {
+    "note": "string", //Ex: "Selected",
+    "name": "string", //Ex: "Arcane Resistance",
+    "description": "string" //Ex: "+2 to Trait rolls to resist magical effects; magical damage is reduced by 2.",
+  }, {
+    "name": "string", //Ex: "New Powers",
+    "note": "string", //Ex: "Selected",
+    "description": "string" //Ex: "Your character learns a new power. Wizards must have access to an Arcane Laboratory and Clerics must complete a quest.",
+  }, {
+    "name": "string", //Ex:  "New Powers",
+    "description": "string", //Ex:  "Your character learns a new power. Wizards must have access to an Arcane Laboratory and Clerics must complete a quest.",
+    "note": "string" //Ex:  "Advance",
+  }, {
+    "name": "string", //Ex:  "Power Points",
+    "description": "string", //Ex:  "Gain 5 additional Power Points, no more than once per Rank.",
+    "note": "string" //Ex: "Advance",
+    }],
+  "gear": [{
+    "name":"string", //Ex:  "Backpack",
+    "quantity":"number" //Ex: 1
+    },{
+    "name": "string", //Ex:  "Bullet, Small",
+    "weight": "number", //Ex: 2,
+    "quantity": "number", //Ex: 100,
+    "notes": "string", //Ex:  ".22 to .32 caliber",
+    "summary": "string", //Ex:   ".22 to .32 caliber",
+    "cost": "number" //Ex: 0.002
+  }],
+  "gender":  "string", 
+  "heavyArmor": "boolean",
+  "hindrances": [{
+    "name": "string", //Ex: "Arrogant (major)",
+    "description": "string", //Ex: "Likes to dominate his opponent, challenge the most powerful foe in combat.",
+    "note": "string", //Ex: "Selected",
+    "major": "boolean" 
+  }],
+  "parryTotal": "number", // Ex: 2,
+  "skills": [{
+    "name": "string", // Ex: "(Unskilled)",
+    "attribute": "string", // Ex: "",
+    "value": "string", // Ex: "d4-2",
+    "dieValue": "number", // Ex: 4,
+    "mod": "number" // Ex: -2
+  }, {
+    "name": "string", // Ex: "Athletics",
+    "attribute": "string", // Ex: "agility",
+    "value": "string", // Ex: "d4",
+    "dieValue": "number", // Ex: 4,
+    "mod": "number" // Ex: 0
+  }, {
+    "name": "string", // Ex: "Common Knowledge",
+    "attribute": "string", // Ex: "smarts",
+    "value": "string", // Ex: "d4",
+    "dieValue": "number", // Ex: 4,
+    "mod": "number" // Ex: 0
+  }, {
+    "name": "string", // Ex: "Notice",
+    "attribute": "string", // Ex: "smarts",
+    "value": "string", // Ex: "d4",
+    "dieValue": "number", // Ex: 4,
+    "mod": "number" // Ex: 0
+  }, {
+    "name": "string", // Ex: "Persuasion",
+    "attribute": "string", // Ex: "spirit",
+    "value": "string", // Ex: "d6",
+    "dieValue": "number", // Ex: 6,
+    "mod": "number" // Ex: 0
+  }, {
+    "name": "string", // Ex: "Shooting",
+    "attribute": "string", // Ex: "agility",
+    "value": "string", // Ex: "d6",
+    "dieValue": "number", // Ex: 6,
+    "mod": "number" // Ex: 0
+  }, {
+    "name": "string", // Ex: "Stealth",
+    "attribute": "string", // Ex: "agility",
+    "value": "string", // Ex: "d4",
+    "dieValue": "number", // Ex: 4,
+    "mod": "number" // Ex: 0
+  }],
+  "toughnessTotal": "number", // Ex: 4,
+  "wealth": "number", // Ex: 70,
+  "weapons": [{
+    "name": "string", // Ex: "Derringer (.41)",
+    "weight": "number", // Ex: 1,
+    "range": "string", // Ex: "5/10/20",
+    "damage": "string", // Ex: "2d4",
+    "rof": "number", // Ex: 1,
+    "shots": "number", // Ex: 2,
+    "ap": "number", // Ex: 0,
+    "quantity": "number", // Ex: 1,
+    "cost": "number", // Ex: 100,
+    "profiles": [{
+      "skillName": "string", // Ex: "Shooting",
+      "skillValue": "d6"
+    }]
+  }, {
+    "name": "string", // Ex: "Glock (9mm)",
+    "weight": "number", // Ex: 3,
+    "range": "string", // Ex: "12/24/48",
+    "damage": "string", // Ex: "2d6",
+    "rof": "number", // Ex: 1,
+    "shots": "number", // Ex: 17,
+    "ap": "number", // Ex: 1,
+    "quantity": "number", // Ex: 1,
+    "cost": "number", // Ex: 200,
+    "profiles": [{
+      "skillName": "string", // Ex: "Shooting",
+      "skillValue": "string", // Ex: "d6"
+    }]
+  }],
+  "wildcard": "boolean",
+  "woundsMax": "number" // Ex: 3
+}

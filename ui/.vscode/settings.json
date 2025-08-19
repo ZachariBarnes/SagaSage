@@ -1,0 +1,4 @@
+{
+    "python.testing.autoTestDiscoverOnSaveEnabled": false,
+    "python.analysis.enablePytestSupport": false
+}

@@ -1,0 +1,79 @@
+@use "utils" as *;
+//@use "global" as *;
+
+$color_type_0: rgb(0, 0, 0);
+
+$font_type_0: 600 16px/1.18 "Inter", Helvetica, Arial, serif;
+
+.section3 {
+  @include flex-column;
+  display: flex;
+  position: relative;
+  flex-grow: 1;
+  white-space: pre-wrap;
+
+}
+.highlights {
+  @include lg {
+    font-size: 12px;
+    text-align: center;
+  }  
+  @include md {
+    text-align: left;
+    margin: 3px 8px 12px;
+  }
+  @include xs {
+    text-align: left;
+    margin: 3px 4px 12px 8px;
+  }
+  @include tn {
+    text-align: left;
+    margin: 3px 4px 12px;
+  }
+  @include font-face($font_type_0, $color_type_0, 0px);
+  flex-grow: 1;
+  min-height: 50px;
+  position: relative;
+  left: 15px;
+  right: 13px;
+}
+
+.sectionHeader {
+  @include lg {
+    text-align: center;
+  }
+  flex-grow: 1;
+  position: relative;
+  left: 15px;
+  right: 13px;
+  border-top: solid 1px #424446;
+}
+
+.highlights1 {
+  @include lg {
+    font-size: 12px;
+    text-align: right;
+    margin: 3px 8px 12px 15px;
+  }
+  @include md {
+    text-align: left;
+    margin: 3px 8px 12px;
+  }
+  @include xs {
+    text-align: left;
+    margin: 3px 4px 12px 8px;
+  }
+  @include tn {
+    text-align: left;
+    margin: 3px 4px 12px;
+  }
+  @include font-face($font_type_0, $color_type_0, 0px);
+  position: relative;
+  flex-grow: 1;
+  min-height: 50px;
+  margin: 3px 13px 12px 15px;
+}
+
+.hr {
+  border: solid 1px #424446;
+}

@@ -1,0 +1,140 @@
+@use "utils" as *;
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  @include sm {
+    padding: 5px 5px;
+  }
+  background-color: #fff;
+  box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+  height: 5rem;
+  @include sm {
+    height: 3rem;
+  }
+}
+
+ul {
+  display: inline-flex;
+  list-style: none;
+  padding-left: 0px;
+}
+
+li {
+  padding: 1vw;
+  @include sm {
+    padding: 0.5vw;
+    font-size: 1rem;
+    flex-direction: column;
+    display: flex;
+  }
+}
+
+a {
+  text-decoration: underline;
+  color: #333;
+  font-weight: bold;
+  font-size: 1.2rem;
+  @include sm {
+    padding: 0.5vw;
+    font-size: 0.8rem;
+    flex-direction: column;
+    display: flex;
+  }
+}
+
+a:hover {
+  color: #666;
+}
+
+.login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.google-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+  color: #3f3f3f;
+  border: 1px solid #3f3f3f;
+  border-radius: 2rem;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.google-button:hover {
+  background-color: #3f3f3f;
+  color: #ffffff;
+}
+
+.logout-button {
+  margin-top: 10px;
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+  border: none;
+  border-radius: 2rem;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 10px 20px;
+  transition: all 0.2s ease-in-out;
+}
+
+.logout-button:hover {
+  background-color: #0062cc;
+} 
+
+.centered-cell {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-image{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  background-color: #ffffff;
+  color: #3f3f3f;
+  border: 1px solid #000000;
+  border-radius: 2rem;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.google-login-btn{
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: white;
+  color:#4285F4; 
+  border: none;
+  border-radius: 2rem;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.google-logo {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+
+/* Hover effect */
+.google-login--btn:hover {
+  background-color: #357AE8;
+}

@@ -1,0 +1,38 @@
+.characterResult {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+  width: 80%;
+  margin-left: 10%;
+}
+
+.result {
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-align: left;
+  margin-left: 2%;
+  white-space: pre-wrap;
+  width: 80%;
+}
+.name {
+  font-size: 2rem;
+  width: 100%;
+}
+
+.items {
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-align: left;
+  margin-left: 2%;
+  width: 100%;
+  white-space: pre-wrap;
+}
+.portrait {
+  align-items: left;
+  justify-content: left;
+  display: flex;
+  margin-left: 1vw;
+  border: 1px solid black;
+}

@@ -1,0 +1,18 @@
+@use "utils" as *;
+//@use "global" as *;
+
+$bg_color_type_0: rgb(255, 255, 255);
+
+$padding_type_0: undefinedpx undefinedpx undefinedpx undefinedpx;
+
+.main {
+  @include flex-column;
+  background-color: $bg_color_type_0;
+  padding: $padding_type_0;
+  position: relative;
+  overflow: hidden;
+}
+.main__cell {
+  @include flex-column;
+  position: relative;
+}

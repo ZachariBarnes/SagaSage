@@ -1,0 +1,245 @@
+@use "utils" as *;
+.CharacterGenerator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 1px;
+  padding:0vw 1vw;
+  justify-content: center;
+  width: calc(100% - 400px);
+  @include lg {
+     width: calc(100% - 260px);
+  }
+  @include md {
+     width: calc(100% - 130px);
+  }
+  @include sm{
+    width: calc(100%);
+  }
+  @include tn {
+    width: calc(100%);
+  }
+  max-width: 100%;
+}
+
+form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #D6FAFF;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.2);
+  width: 80%;
+  max-width: 80%;
+  border: 1px solid #424446;
+}
+
+tr {
+  display:flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.formTable{
+  width:100%;
+}
+
+.form-group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  width: auto;
+  max-width: 80%;
+}
+
+.large-text-box {
+  font-size: 16px;
+  height: 10vh;
+  justify-content: center;
+  background-color: #fff;
+  border-radius: 1rem;
+  width: auto;
+  max-width: 90%;
+}
+
+
+.other-rulesets{
+  display: left;
+  height: 5vh;
+  margin-top: 10px;
+}
+
+.other-text-box {
+  float:left;
+  font-size: 16px;
+  background-color: #fff;
+  border-radius: 1rem;
+  margin: 0;
+}
+
+.setRulesetBtn{
+  float: left;
+  margin-left : 10px;
+  height: 5vh;
+}
+
+select {
+  font-size: 16px;
+  padding: 10px;
+  border-radius: 1rem;
+  border: none;
+  outline: none;
+  text-align: center;
+  width: auto;
+  max-width: 90%;
+}
+
+.input-cell {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  margin: 5px;
+  width:100%;
+}
+
+label {
+  width: 100%;
+  font-size: 18px;
+  font-weight: bold;
+  margin-right: 10px;
+  padding: 5px 0px 5px 0px;
+}
+
+.material-label {
+    display: block;
+    width: 100%;
+    text-align: left;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+input[type='checkbox'] {
+  width: auto;
+  margin-right: 15px;
+  margin-left: 15px;
+  vertical-align: middle;
+}
+
+.checkbox-row {
+  display: flex;
+  flex-direction: row;
+  @include sm {
+    flex-direction: column;
+  }
+  @include xs {
+    margin-left: 10px;
+  }
+  align-items: middle;
+}
+
+.first-checkbox {
+  width: 5.5vw; /* adjust this value as needed */
+}
+
+input[type='submit'], .setRulesetBtn {
+  background-color: #1481BA;
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border-color: #424446;
+  border: 1px;
+}
+input[type='submit']:hover {
+  background-color: #0c4666;
+}
+
+input[type='submit']:disabled {
+  background-color: #424446;
+}
+
+.cancelBtn {
+  background-color: #1481BA;
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border-color: #424446;
+  border: 1px;
+  align-self: center;
+  margin-top: 10px;
+}
+
+.result {
+  display: flex;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  padding-left: 10%;
+}
+
+.side-ad {
+  width:300px;
+  @include lg {
+    width: 120px;
+  }
+  @include md {
+    width: 120px;
+  }
+  @include sm{
+    width: 0px;
+    border-width: 0px;
+  }
+  @include tn {
+    width: 0px;
+    border-width: 0px;
+  }
+  max-width: 300px;
+  height: 600px;
+  aspect-ratio: 1;
+  position: relative;
+  margin: 100px 0px 0px 0px;
+  border-color: #424446;
+  border-style: solid;
+  border-width: 1px;
+}
+
+.ad-layout{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.generateBtn {
+  background-color: #1481BA;
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border-color: #424446;
+  border: 1px;
+  margin-top: 10px;
+}
+
+.centeredRow {
+  display: flex !important;
+  flex-wrap: wrap;
+  align-self: center;
+  align-content: center !important;
+  align-items: center !important;
+}
+

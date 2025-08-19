@@ -1,0 +1,12 @@
+.complete {
+    color:  #228B22;
+}
+
+.in-progress {
+    color: #FFBF00;
+}
+
+.capabilities {
+    text-align: center;
+    display: flex;
+}

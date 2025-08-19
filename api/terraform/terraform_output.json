@@ -1,0 +1,32 @@
+{
+  "character_lambda_base_url": {
+    "sensitive": false,
+    "type": "string",
+    "value": "https://uhbgumy3dltulzmnlohhir435a0vyasx.lambda-url.us-east-1.on.aws//"
+  },
+  "get_character_lambda_base_url": {
+    "sensitive": false,
+    "type": "string",
+    "value": "https://bdlbiijz2pd5dmcjuj3xlurkq40ifpot.lambda-url.us-east-1.on.aws//"
+  },
+  "portrait_lambda_base_url": {
+    "sensitive": false,
+    "type": "string",
+    "value": "https://beddfopn3pxmbblosrsy5lkgza0qgjrh.lambda-url.us-east-1.on.aws//"
+  },
+  "save_char_lambda_base_url": {
+    "sensitive": false,
+    "type": "string",
+    "value": "https://thm4jumjflsgxdkn5a35vbbc7u0waadg.lambda-url.us-east-1.on.aws//"
+  },
+  "save_role_arn": {
+    "sensitive": false,
+    "type": "string",
+    "value": "arn:aws:iam::676488942119:role/save_lambda"
+  },
+  "signup_lambda_base_url": {
+    "sensitive": false,
+    "type": "string",
+    "value": "https://pq5swp5pzl77pzhr72qk2z7bby0qjnym.lambda-url.us-east-1.on.aws//"
+  }
+}
