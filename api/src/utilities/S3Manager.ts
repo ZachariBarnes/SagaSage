@@ -7,7 +7,7 @@ import {
   GetObjectCommand,
   ObjectCannedACL,
 } from "@aws-sdk/client-s3";
-import {getTempCredentials} from "./AWSRoleManager.js";
+import {getTempCredentials} from "./AWSRoleManager.ts";
 import dotenv from "dotenv";
 
 dotenv.config();

@@ -1,4 +1,4 @@
-import { Usage } from "./Usage.js";
+import { Usage } from "./Usage.ts";
 
 export interface OpenAPIResult {
   model: string; //deprecated - Now in Usage

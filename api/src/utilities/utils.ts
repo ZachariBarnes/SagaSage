@@ -1,17 +1,22 @@
-import { APIResponse } from "../models/APIResponse.js";
+import { APIResponse } from "../models/APIResponse.ts";
 import jwtDecode, { JwtPayload } from "jwt-decode";
 import dotenv from "dotenv";
 import { OAuth2Client } from 'google-auth-library';
-import { requestHandler } from "../utilities/requestHandler.js";
+import { requestHandler } from "../utilities/requestHandler.ts";
 import { App, initializeApp } from "firebase-admin/app";
 import { getAuth } from "firebase-admin/auth";
 import { get } from "http";
 import { parse } from "path";
 
 dotenv.config();
-const app: App = initializeApp(JSON.parse(process.env.FIREBASE_CONFIG!));
+const firebaseConfig = process.env.FIREBASE_CONFIG ? JSON.parse(process.env.FIREBASE_CONFIG!) : {};
+const app: App = initializeApp(firebaseConfig);
+const AUTH_OVERRIDE = process.env.AUTH_OVERRIDE || "AUTH_OVERRIDE_TOKEN";
+const OVERRIDE_USER = process.env.OVERRIDE_USER || JSON.stringify({ email: 'Frieza@Dbz.com', name: 'Lord Frieza Emperor of the Universe' });
 
+console.log("Debug mode:", process.env.DEBUG);
 const debug = process.env.DEBUG === "true";
+console.log("Debug mode:", debug);
 const mockUser = {
   email: "FakeUser@faker.com",
   name: "Fake User",
@@ -71,9 +76,10 @@ async function verifyFirebaseUser(token: string) {
 }
 
 export function DecodeJWT(credential: any) {
-  if (debug && credential === process.env.AUTH_OVERRIDE) {
+  if (debug && credential === AUTH_OVERRIDE) {
     console.warn("Using Mock User - This should only happen in testing!");
-    return { errors: [], user:JSON.parse(process.env.OVERRIDE_USER!) };
+    const user = JSON.parse(OVERRIDE_USER);
+    return { errors: [], user };
   }
   if (!credential) return {errors:["No Credenitals Found"], user: null};
   const token: string = credential;
@@ -141,7 +147,9 @@ export async function validateRequest(event: any, auth:string, body: any, prompt
       errors.push("No prompt provided");
     }
   }
-  console.log("Validation Errors: ", errors);
+  if (errors.length > 0) {
+    console.log("Validation Errors: ", errors);
+  }
   return errors;
 }
 

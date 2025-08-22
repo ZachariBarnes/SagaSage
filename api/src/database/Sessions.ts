@@ -1,4 +1,4 @@
-import query from "../utilities/QueryUtils.js";
+import query from "../utilities/QueryUtils.ts";
 import dotenv from "dotenv";
 
 dotenv.config();

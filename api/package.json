@@ -5,6 +5,7 @@
   "main": "./src/index.ts",
   "scripts": {
     "local": "npx ts-node ./src/local.ts",
+    "test": "jest --coverage",
     "build": "npx tsc && cp package.json build && cp yarn.lock build && cd build && yarn install --production --frozen-lockfile && cd ..",
     "deploy:local": "npm run build && cd terraform && terraform apply -auto-approve && terraform output -json > terraform_output.json && cd ..",
     "aws:login": "aws sso login --profile Thrasosoft-Admin",
@@ -32,9 +33,13 @@
     "uuid": "^9.0.1"
   },
   "devDependencies": {
+    "@babel/preset-env": "^7.28.3",
+    "@babel/preset-typescript": "^7.27.1",
     "@types/glob": "^9.0.0",
     "@types/jest": "^30.0.0",
+    "@types/mocha": "^10.0.10",
     "@types/node": "^18.15.13",
+    "ts-jest": "^29.4.1",
     "ts-node": "^10.9.1",
     "typescript": "^5.0.4"
   }

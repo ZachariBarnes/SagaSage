@@ -1,7 +1,7 @@
-import { character, portrait, saveNewCharacter, signUpSignInLetMeBegin} from "./index.js";
+import { character, portrait, saveNewCharacter, signUpSignInLetMeBegin} from "./index.ts";
 import dotenv from 'dotenv';
-//import {req} from "./test.js";
-import { saveCharacter } from "./processors/character.js";
+//import {req} from "./test.ts";
+import { saveCharacter } from "./processors/character.ts";
 import { devNull } from "os";
 
 dotenv.config();

@@ -1,9 +1,9 @@
-import { APIResponse } from "./models/APIResponse.js";
-import { getErrorResponse, getDataFromEvent, invalidHTTPMethod, getInvalidMethodResponse, validateRequestAndGetUser } from "./utilities/utils.js";
-import { createCharacter, getCharacterOrList, saveCharacter } from "./processors/character.js";
+import { APIResponse } from "./models/APIResponse.ts";
+import { getErrorResponse, getDataFromEvent, invalidHTTPMethod, getInvalidMethodResponse, validateRequestAndGetUser } from "./utilities/utils.ts";
+import { createCharacter, getCharacterOrList, saveCharacter } from "./processors/character.ts";
 import dotenv from 'dotenv';
-import { createPortrait } from "./processors/portraits.js";
-import { signUpNewUser } from "./processors/user.js";
+import { createPortrait } from "./processors/portraits.ts";
+import { signUpNewUser } from "./processors/user.ts";
 dotenv.config();
 const debug = process.env.DEBUG === "true";
 

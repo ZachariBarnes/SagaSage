@@ -6,6 +6,7 @@
 /api//build.zip
 /api/*.zip
 /api/build.zip
+/api/coverage
 
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 

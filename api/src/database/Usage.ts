@@ -1,6 +1,6 @@
-import query from "../utilities/QueryUtils.js";
-import { User } from "../models/User.js";
-import { Usage } from "../models/Usage.js";
+import query from "../utilities/QueryUtils.ts";
+import { User } from "../models/User.ts";
+import { Usage } from "../models/Usage.ts";
 
 export const createNewUsage = async (validatedUser: User, usage: Usage) => {
     const queryString = `INSERT INTO usage (user_id, session_id, prompt_tokens, completion_tokens, total_tokens, cost, model) VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING *`;

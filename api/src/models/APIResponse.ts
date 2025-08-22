@@ -1,4 +1,4 @@
-import { OpenAPIResult } from "./OpenAPIResult.js";
+import { OpenAPIResult } from "./OpenAPIResult.ts";
 
 // NOTE*: THIS IS THE ONLY VALID RESPONSE FORMAT FOR AWS LAMBDA
 export interface APIResponse {

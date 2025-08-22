@@ -1,12 +1,12 @@
 import { OpenAIApi } from "openai";
-import { APIResponse } from "../models/APIResponse.js";
-import { getOpenAIConfiguration } from "../utilities/openAI.js";
-import { getBase64Image, getImageCost, wait } from "../utilities/utils.js";
-import * as defaults from "../utilities/defaults.js";
-import { StableDiffImageRequest } from "../models/Templates/StableDiffImageRequest.js";
-import { requestHandler } from "../utilities/requestHandler.js";
+import { APIResponse } from "../models/APIResponse.ts";
+import { getOpenAIConfiguration } from "../utilities/openAI.ts";
+import { getBase64Image, getImageCost, wait } from "../utilities/utils.ts";
+import * as defaults from "../utilities/defaults.ts";
+import { StableDiffImageRequest } from "../models/Templates/StableDiffImageRequest.ts";
+import { requestHandler } from "../utilities/requestHandler.ts";
 import dotenv from "dotenv";
-import getWorkflow from "../utilities/ComfyUiWorkflow.js";
+import getWorkflow from "../utilities/ComfyUiWorkflow.ts";
 
 dotenv.config();
 const debug = process.env.DEBUG === "true";

@@ -1,8 +1,8 @@
 
-import { checkExistingUser, createNewUser, getUserByEmail, updateUserLogin } from "../database/Users.js";
-import { APIResponse } from "../models/APIResponse.js";
-import { getNickname } from "../utilities/utils.js";
-import { startNewSession } from "./session.js";
+import { checkExistingUser, createNewUser, getUserByEmail, updateUserLogin } from "../database/Users.ts";
+import { APIResponse } from "../models/APIResponse.ts";
+import { getNickname } from "../utilities/utils.ts";
+import { startNewSession } from "./session.ts";
 
 
 export async function signUpNewUser(validatedUser: any): Promise<APIResponse> {

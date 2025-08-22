@@ -1,6 +1,6 @@
 
-import { createSession, getSessionById } from "../database/Sessions.js";
-import {} from "../utilities/utils.js";
+import { createSession, getSessionById } from "../database/Sessions.ts";
+import {} from "../utilities/utils.ts";
 import { v4 as uuidv4 } from 'uuid';
 
 export async function startNewSession(user: any): Promise<any> {

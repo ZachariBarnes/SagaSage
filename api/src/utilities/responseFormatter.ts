@@ -1,5 +1,5 @@
-import { CheckboxOptions } from "../models/CheckBoxOptions.js";
-import { Rulesets } from "../models/Rulesets.js";
+import { CheckboxOptions } from "../models/CheckBoxOptions.ts";
+import { Rulesets } from "../models/Rulesets.ts";
 
 const baseFormat = {
     name: "string",

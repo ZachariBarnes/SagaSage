@@ -1,5 +1,5 @@
-import query from "../utilities/QueryUtils.js";
-import { User } from "../models/User.js";
+import query from "../utilities/QueryUtils.ts";
+import { User } from "../models/User.ts";
 
 export const createNewUser = async (validatedUser: User) => {
     const queryString = `INSERT INTO users (username, email, picture) VALUES ($1, $2, $3) RETURNING *`;

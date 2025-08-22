@@ -1,16 +1,16 @@
 import { OpenAIApi } from "openai";
-import { APIResponse } from "../models/APIResponse.js";
-import { getChatCompletion, getOpenAIConfiguration } from "../utilities/openAI.js";
-import { RoundCost, getStatusCodeByResponse, getSuccessResponse, uriEncode } from "../utilities/utils.js";
-import * as defaults from "../utilities/defaults.js";
-import { getFormat } from "../utilities/responseFormatter.js";
-import { getUserByEmail } from "../database/Users.js";
-import { createNewUsage, updateUsageWithCharacter } from "../database/Usage.js";
+import { APIResponse } from "../models/APIResponse.ts";
+import { getChatCompletion, getOpenAIConfiguration } from "../utilities/openAI.ts";
+import { RoundCost, getStatusCodeByResponse, getSuccessResponse, uriEncode } from "../utilities/utils.ts";
+import * as defaults from "../utilities/defaults.ts";
+import { getFormat } from "../utilities/responseFormatter.ts";
+import { getUserByEmail } from "../database/Users.ts";
+import { createNewUsage, updateUsageWithCharacter } from "../database/Usage.ts";
 import dotenv from "dotenv";
-import { createNewCharacter, getCharacter, selectCharacterList, updateCharacter } from "../database/Character.js";
-import { uploadImageToS3 } from "../utilities/S3Manager.js";
-import user from "./user.js";
-import { User } from "../models/User.js";
+import { createNewCharacter, getCharacter, selectCharacterList, updateCharacter } from "../database/Character.ts";
+import { uploadImageToS3 } from "../utilities/S3Manager.ts";
+import user from "./user.ts";
+import { User } from "../models/User.ts";
 
 dotenv.config();
 const debug = process.env.DEBUG === "true";

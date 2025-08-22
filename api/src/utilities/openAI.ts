@@ -1,10 +1,10 @@
 import * as OpenAI from "openai";
 import dotenv from 'dotenv';
-import { OpenAPIResult } from "../models/OpenAPIResult.js";
-import { ErrorMessages, getCost } from "./utils.js";
-import { GptModels } from "../models/GptModels.js";
-import { Rulesets } from "../models/Rulesets.js";
-import { Usage } from "../models/Usage.js";
+import { OpenAPIResult } from "../models/OpenAPIResult.ts";
+import { ErrorMessages, getCost } from "./utils.ts";
+import { GptModels } from "../models/GptModels.ts";
+import { Rulesets } from "../models/Rulesets.ts";
+import { Usage } from "../models/Usage.ts";
 
 dotenv.config();
 
