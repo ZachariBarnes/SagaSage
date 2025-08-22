@@ -1,10 +1,21 @@
-# SagaSage – unified application repository
+# SagaSage
 
-This repository brings together the three **ai‑co‑dm** projects—API, DB and UI—into a single codebase.  The original sources are copied into `api/`, `db/` and `ui/` and remain unmodified.  Secrets and credentials are injected at runtime via environment variables to ensure no private information is stored in the repository.
+This repository brings together the three **ai‑co‑dm** projects—API, DB and UI—into a single codebase.  The original sources are copied into `api/`, `db/` and `ui/` and remain unmodified. 
 
 ## Overview
 
 SagaSage is a full‑stack generative AI application for table‑top role‑playing games.  It allows game masters and players to **create, save and edit richly generated characters**, complete with portraits, backstories, stat blocks and inventories.  Characters can be marked as **public** or **private**: public characters are visible to all players, while private characters (such as enemies or NPCs) are hidden from other players so game masters can keep surprises secret.  Authentication is handled by Google Sign‑In via Firebase, so only authorised users can manage their characters.
+
+### Components
+
+* **AWS Lambda (Character API):** A Node.js function that accepts requests to generate or save characters.  It uses environment variables for credentials and calls the OpenAI API to generate backstories and images.  When running locally this Lambda is served via an Express wrapper using the `npm run local` script.
+* **S3 Bucket (Image Storage):** Stores generated character portraits.  Terraform defines the bucket with a public‑read ACL【832695198216688†L0-L7】.  Locally you can use a simple `uploads/` directory or MinIO as a stand‑in.
+* **PostgreSQL Database:** Stores user accounts, sessions, characters and usage metrics.  Although the Terraform configuration sets up AWS providers【102489849184110†L19-L30】, the actual database runs outside of AWS (e.g. RDS or a self‑hosted instance).  Liquibase manages schema migrations.
+* **OpenAI / Stable Diffusion:** The API uses the OpenAI SDK to generate character descriptions and portraits by default.  You can point the API to a custom Stable Diffusion server by overriding the appropriate environment variables.
+* **React/Next.js UI:** Provides the web interface where users create and manage characters.  It authenticates via Firebase (Google OAuth) and sends HTTPS requests to the API including the user’s ID token.
+* **Terraform:** Defines the cloud infrastructure—Lambda, S3 bucket, IAM roles and function URLs.  Use `terraform plan` and `terraform apply` to deploy SagaSage in AWS.  You can adjust the region and bucket names in the Terraform locals files.
+* **Security:** Authentication is enforced via Google/Firebase.  The API validates the user’s ID token using the Google OAuth client ID【263045001802365†L34-L41】 and reads a shared `AUTH_KEY` from the request body.  Sessions are stored in cookies with expiry times.  Secrets (API keys, DB passwords, Firebase config) are injected via environment variables; none are stored in the repository.
+
 
 ## Install (running locally)
 
@@ -46,21 +57,6 @@ The SagaSage stack can be run locally without deploying to AWS.  Use the followi
 
    The UI will be available at `http://localhost:3000`.  Sign in with Google; the app will store your ID token in cookies and include it in API calls.
 
-## Architecture
-
-SagaSage uses a serverless architecture when deployed to the cloud.  Locally, the same services can be emulated using Express and a local PostgreSQL instance.  The diagram below groups AWS services (Lambda and S3) inside an **AWS Cloud** boundary and places external services (Firebase Auth, PostgreSQL, OpenAI API and the user’s browser) outside that boundary.  Arrow labels describe request and data flows.
-
-![SagaSage Architecture](architecture_diagram_updated.png)
-
-### Components
-
-* **AWS Lambda (Character API):** A Node.js function that accepts requests to generate or save characters.  It uses environment variables for credentials and calls the OpenAI API to generate backstories and images.  When running locally this Lambda is served via an Express wrapper using the `npm run local` script.
-* **S3 Bucket (Image Storage):** Stores generated character portraits.  Terraform defines the bucket with a public‑read ACL【832695198216688†L0-L7】.  Locally you can use a simple `uploads/` directory or MinIO as a stand‑in.
-* **PostgreSQL Database:** Stores user accounts, sessions, characters and usage metrics.  Although the Terraform configuration sets up AWS providers【102489849184110†L19-L30】, the actual database runs outside of AWS (e.g. RDS or a self‑hosted instance).  Liquibase manages schema migrations.
-* **OpenAI / Stable Diffusion:** The API uses the OpenAI SDK to generate character descriptions and portraits by default.  You can point the API to a custom Stable Diffusion server by overriding the appropriate environment variables.
-* **React/Next.js UI:** Provides the web interface where users create and manage characters.  It authenticates via Firebase (Google OAuth) and sends HTTPS requests to the API including the user’s ID token.
-* **Terraform:** Defines the cloud infrastructure—Lambda, S3 bucket, IAM roles and function URLs.  Use `terraform plan` and `terraform apply` to deploy SagaSage in AWS.  You can adjust the region and bucket names in the Terraform locals files.
-* **Security:** Authentication is enforced via Google/Firebase.  The API validates the user’s ID token using the Google OAuth client ID【263045001802365†L34-L41】 and reads a shared `AUTH_KEY` from the request body.  Sessions are stored in cookies with expiry times.  Secrets (API keys, DB passwords, Firebase config) are injected via environment variables; none are stored in the repository.
 
 ## Environment variables
 
@@ -141,7 +137,7 @@ sagaSage/
 
 ## Secret management
 
-The original repositories relied on environment variables loaded via Terraform to supply credentials.  For example, the Lambda configuration maps variables like `OPENAI_API_KEY`, `PG_USER` and `PG_PASS` from a `.env` file into the function’s environment【151961939534151†L18-L32】.  In this consolidated repository **no secret values are stored**.  You must provide the appropriate values at deployment time (e.g., via AWS Secrets Manager, CI/CD pipeline variables or local `.env` files).  The copies under `api/`, `db/` and `ui/` reflect the upstream state and have not been modified.
+The original repositories relied on environment variables loaded via Terraform to supply credentials.  For example, the Lambda configuration maps variables like `OPENAI_API_KEY`, `PG_USER` and `PG_PASS` from a `.env` file into the function’s environment.  In this consolidated repository **no secret values are stored**.  You must provide the appropriate values at deployment time (e.g., via AWS Secrets Manager, CI/CD pipeline variables or local `.env` files).  The copies under `api/`, `db/` and `ui/` reflect the upstream state and have not been modified.
 
 ## Deployment guidance
 
@@ -152,4 +148,3 @@ The original repositories relied on environment variables loaded via Terraform t
 
 ## Conclusion
 
-SagaSage combines the character API, database migration scripts and the user interface into a single repository.  The updated architecture diagram highlights how AWS services, third‑party APIs and external infrastructure interact.  All secrets have been removed from the codebase; remember to provide the necessary environment variables when deploying.  This unified repository should serve as the foundation for future development and deployment of the SagaSage application.
