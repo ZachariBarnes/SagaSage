@@ -6,6 +6,12 @@ This repository brings together the three **ai‑co‑dm** projects—API, DB an
 
 SagaSage is a full‑stack generative AI application for table‑top role‑playing games.  It allows game masters and players to **create, save and edit richly generated characters**, complete with portraits, backstories, stat blocks and inventories.  Characters can be marked as **public** or **private**: public characters are visible to all players, while private characters (such as enemies or NPCs) are hidden from other players so game masters can keep surprises secret.  Authentication is handled by Google Sign‑In via Firebase, so only authorised users can manage their characters.
 
+## Architecture
+
+SagaSage uses a serverless architecture when deployed to the cloud.  Locally, the same services can be emulated using Express and a local PostgreSQL instance.  The diagram below groups AWS services (Lambda and S3) inside an **AWS Cloud** boundary and places external services (Firebase Auth, PostgreSQL, OpenAI API and the user’s browser) outside that boundary.  Arrow labels describe request and data flows.
+
+![SagaSage Architecture](architecture_diagram.png)
+
 ### Components
 
 * **AWS Lambda (Character API):** A Node.js function that accepts requests to generate or save characters.  It uses environment variables for credentials and calls the OpenAI API to generate backstories and images.  When running locally this Lambda is served via an Express wrapper using the `npm run local` script.
